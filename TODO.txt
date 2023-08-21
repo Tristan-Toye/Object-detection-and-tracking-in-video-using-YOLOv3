@@ -1,0 +1,1 @@
+add route and shortcut custom models
