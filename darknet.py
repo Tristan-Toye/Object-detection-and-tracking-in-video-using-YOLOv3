@@ -226,8 +226,20 @@ class Darknet(nn.Module):
         
         return detections
 
+    def load_weights(self, path_to_weight_file: str):
+        if path_to_weight_file.endswith('.pth') or path_to_weight_file.endswith('.pt'):  # pytorch format
+            """
+            chkpt = torch.load(weights, map_location=device)
+            chkpt['model'] = {k: v for k, v in chkpt['model'].items() if model.state_dict()[k].numel() == v.numel()}
+            model.load_state_dict(chkpt['model'], strict=False)
+            """
+            self.load_state_dict(torch.load(path_to_weight_file))
 
-    def load_weights(self, weightfile):
+        elif len(path_to_weight_file) > 0:  # darknet format
+            # possible weights are '*.weights', 'yolov3-tiny.conv.15',  'darknet53.conv.74' etc.
+            self.load_darknet_weights(path_to_weight_file)
+
+    def load_darknet_weights(self, weightfile):
         #Open the weights file
         fp = open(weightfile, "rb")
     
