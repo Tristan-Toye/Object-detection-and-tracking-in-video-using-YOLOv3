@@ -1,0 +1,26 @@
+# YOLOv3 Object Detection and Tracking Requirements
+# Core deep learning framework
+torch>=1.0.0
+torchvision>=0.2.0
+
+# Computer vision and image processing
+opencv-python>=4.0.0
+numpy>=1.19.0
+
+# Data manipulation and analysis
+pandas>=1.0.0
+
+# Additional utilities (optional but recommended)
+Pillow>=8.0.0  # Alternative image processing
+matplotlib>=3.0.0  # For visualization
+tqdm>=4.0.0  # Progress bars
+
+# Development and testing (optional)
+pytest>=6.0.0  # For testing
+black>=21.0.0  # Code formatting
+flake8>=3.8.0  # Code linting
+
+# GPU support (install appropriate version for your CUDA version)
+# For CUDA 11.x: torch==1.9.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+# For CUDA 10.x: torch==1.9.0+cu102 -f https://download.pytorch.org/whl/torch_stable.html
+# For CPU only: torch==1.9.0+cpu -f https://download.pytorch.org/whl/torch_stable.html 
