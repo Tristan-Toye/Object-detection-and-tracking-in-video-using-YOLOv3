@@ -42,7 +42,6 @@ A comprehensive implementation of YOLOv3 (You Only Look Once v3) object detectio
    ```bash
    wget https://pjreddie.com/media/files/yolov3.weights
    ```
-
 ## 🎯 Quick Start
 
 ### Image Detection
